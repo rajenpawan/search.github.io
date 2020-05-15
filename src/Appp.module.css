@@ -1,0 +1,11 @@
+.Nudge{
+display: '';
+}
+
+.showNudge{
+    display: 'block';
+}
+
+.hideNudge{
+    display: 'none';
+}

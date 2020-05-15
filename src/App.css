@@ -1,0 +1,99 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  /* background-color: #282c34; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* font-size: calc(10px + 2vmin); */
+  /* color: white; */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Navbar */
+.Navbg{
+  padding-left: 25px;
+}
+
+.lef{
+  font-size: 1.1rem;
+  margin-left: 42%;
+}
+
+.lefs{
+  margin-left: 40px;
+}
+
+.hm{
+    position: relative;
+    bottom: 10vh;
+  }
+
+.hm h1{
+  padding-bottom: 10px;
+}
+
+#ser{
+  height: 50px;
+  width: 400px; 
+}
+
+.serbut{
+  height: 50px;
+  width: 80px;
+}
+.serbut:hover{
+  box-shadow: 0 0 60px #a8c4dd, 0 0 80px #a8c4dd, 0 0 100px #a8c4dd;
+}
+@media only screen and (max-width: 600px){
+  .hm{
+    margin: auto;
+  }
+
+  #ser{
+    width: 310px;
+    margin: auto;
+  }
+
+  .atl{
+    position: relative;
+    top: 10px;
+    margin-left: 30%;
+    margin-right: 20%
+  }
+  
+  .serbut{
+    position: relative;
+    top: 20px;
+    margin-left: 40%;
+    margin-right: 50%;
+  }
+}
