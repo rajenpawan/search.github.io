@@ -82,7 +82,7 @@ class Geoloc2 extends Component {
             lng: this.state.longpos
           }}
             onClick={this.onMapClicked}
-            zoom={8}         
+            zoom={21}         
         >           
           <Marker 
               onClick={this.onMarkerClick}
