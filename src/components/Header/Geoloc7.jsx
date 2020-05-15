@@ -12,7 +12,7 @@ export class Geoloc7 extends Component {
 
                     <InfoWindow onClose={this.InfoWindowClose}>
                         <div>
-                            <h1>{this.state.selectedPlace.name}</h1>
+                            <h1>{this.state.selectedPlace.name}:</h1>
                         </div>
                         </InfoWindow>    
                 </Map>
