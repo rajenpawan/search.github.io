@@ -16,28 +16,35 @@ class Geoloc2 extends Component {
     this.state = {
       latpos: [],
       longpos: [],
-      geol: [],
+      // geol: [],
+      // geolperm:[],
+      error: [],
       selectedPlace:{},
       showingInfoWindow: false,
       activeMarker:{}
     };
   }
 
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition(
+   componentDidMount() {
+   navigator.geolocation.getCurrentPosition(
       (position) => {
         console.log(`Latitude is: ${position.coords.latitude}`);
         // console.log(`Longitude is: ${position.coords.longitude}`);
         // console.log(position);
         this.setState({
+          geol: navigator.geolocation,
+          // geolperm: navigator.permissions,
+          // geolask: navigator.registerProtocolHandler,
           latpos: [position.coords.latitude],
           longpos: [position.coords.longitude],
-          geol: [navigator.geolocation],
         })
   
       },
       (error) => {
-        console.error(`Error code: ${error.code} - ${error.message}`);
+        // console.error(`Error code: ${error.code} - ${error.message}`);
+        this.setState({
+          error: (`Error: ${error.message}`)
+        })
       }
     );
 
@@ -70,41 +77,40 @@ class Geoloc2 extends Component {
   render() {
     return (
       <div>
-        
         <h4>lat: {this.state.latpos}, lng: {this.state.longpos}</h4>
-        {this.state.geol ? (
-        <Map
-          google={this.props.google}
-          style={mapStyles}
-          // onDragend={this.centerMoved}
-            center = {{
-            lat: this.state.latpos,
-            lng: this.state.longpos
-          }}
+
+            {this.state.geol ? (
+          <Map
+            google={this.props.google}
+            style={mapStyles}
+            // onDragend={this.centerMoved}
+            center={{
+              lat: this.state.latpos,
+              lng: this.state.longpos,
+            }}
             onClick={this.onMapClicked}
-            zoom={21}         
-        >           
-          <Marker 
+            zoom={20}
+          >
+            <Marker
               onClick={this.onMarkerClick}
               name={'Current location'}
-              position = {{
-            lat: this.state.latpos,
-            lng: this.state.longpos
-          }}
-          />
-        
-          <InfoWindow 
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}>
-            <div>
-              <h1>{this.state.selectedPlace.name}</h1>
-            </div>
-          </InfoWindow>
-          {/* <h2>{this.props.coords.latitude}</h2> */}
-          <h4>Using geolocation javascript Api in React..</h4>
-          
-        </Map>
-       ): 'Geolocation is not enabled'} 
+              position={{
+                lat: this.state.latpos,
+                lng: this.state.longpos
+              }}
+            />
+
+            <InfoWindow
+              marker={this.state.activeMarker}
+              visible={this.state.showingInfoWindow}>
+              <div>
+                <h1>{this.state.selectedPlace.name}</h1>
+              </div>
+            </InfoWindow>
+            {/* <h2>{this.props.coords.latitude}</h2> */}
+
+          </Map>
+            ) : <div>{this.state.error}</div>}
 
       </div>
     );
@@ -113,4 +119,5 @@ class Geoloc2 extends Component {
 
 export default GoogleApiWrapper({
   apiKey: "AIzaSyBvK1uIdcwdE6m94Wn-yEy8-5HQZcSn9O8",
+
 })(Geoloc2);

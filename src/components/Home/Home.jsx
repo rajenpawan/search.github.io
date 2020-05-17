@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Form, FormControl, Button, Nav } from "react-bootstrap";
 // import Geoloc7 from '../Header/Geoloc7';
 // import Geoloc1 from '../Header/Geoloc1';
-import Geoloc2 from "../Header/Geoloc2";
+// import Geoloc8 from "../Header/Geoloc8";
 // import Geoloc3 from "../Header/Geoloc3";
 // import Geoloc4 from "../Header/Geoloc4";
-// import Geoloc2 from "../Header/Geoloc2";
+import Geoloc2 from "../Header/Geoloc2";
 // import Geoshow from '../Header/Geoshow';
 
  class Home extends Component {
@@ -25,7 +25,7 @@ import Geoloc2 from "../Header/Geoloc2";
     render() {
         return (
           <div className="hm">
-            <h1>Search..!</h1>
+            <h1>Initializing..!</h1>
             <Form inline className="forinl">
               <FormControl
                 id="ser"
