@@ -84,7 +84,7 @@ class Geoloc2 extends Component {
             google={this.props.google}
             style={mapStyles}
             // onDragend={this.centerMoved}
-            center={{
+            initialCenter ={{
               lat: this.state.latpos,
               lng: this.state.longpos,
             }}
